@@ -1,0 +1,78 @@
+// .mat-toolbar {
+//     width: auto;
+//     margin-bottom: 10px;
+//     background-color: #7f1734;
+//     color: white;
+// }
+.title-center{
+    flex: 1 1 auto;
+    text-align: center;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    font-weight: bold;
+}
+.container {
+	max-width:400px;
+	width:100%;
+	margin:0 auto;
+	position:relative;
+}
+
+
+#contact {
+	background:#F9F9F9;
+	padding:25px;
+	margin:50px 0;
+}
+
+#contact h3 {
+	color: #d60943;
+	display: block;
+	font-size: 30px;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    font-weight: bold;
+}
+
+#contact h4 {
+	margin:5px 0 15px;
+	display:block;
+	font-size:13px;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    font-weight: bold;
+}
+
+.mat-form-field {
+	border: medium none !important;
+	margin: 0 0 10px;
+	min-width: 100%;
+	padding: 0;
+	width: 100%;
+}
+.left-divider {
+   background-color: #d60943;
+   margin-left: 50px;
+   padding: 1px;
+ }
+ .right-divider{
+   background-color: #d60943;
+   margin-left: -120px;
+   padding: 1px;
+ }
+.mat-button {
+    background-color: #d60943;
+    color: white;
+    font-size: medium
+}
+.mat-button:disabled{
+	background-color: #ccc;
+}
+.example-card {
+	height: 100%;
+	width: 100%;
+	margin-top: 150px;
+	margin-bottom: 100px;
+}
+.sumbit-btn {
+	margin-left: -200px;
+	width: 250px;
+    height: 50px;
+}

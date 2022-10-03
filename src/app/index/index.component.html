@@ -1,0 +1,82 @@
+<mat-toolbar class="mat-elevation-z8">
+    <mat-toolbar-row fxLayoutAlign="space-between center">
+        <button mat-icon-button *ngIf="sidenav.mode === 'over'" (click)="sidenav.toggle()">
+            <mat-icon *ngIf="!sidenav.opened">
+                menu
+            </mat-icon>
+            <mat-icon *ngIf="sidenav.opened">
+                close
+            </mat-icon>
+        </button>
+        <button mat-button>
+            <span><b>
+                    <h2><i>FlexiMart</i></h2>
+                </b></span>
+        </button>
+        <div *ngIf="!deviceXs">
+            <button mat-button [matMenuTriggerFor]="stateMenu">State</button>
+            <button mat-button [matMenuTriggerFor]="disticMenu">District</button>
+            <button mat-button [matMenuTriggerFor]="mandalMenu">Mandal</button>
+            <button mat-button (click)="openFilterDialogBox()">Filter</button>
+        </div>
+        <div align="end">
+            <button mat-button *ngIf="deviceXs" (click)="openNewProduct()">
+                New Product
+            </button>
+            <button *ngIf="!deviceXs" mat-button fxLayoutAlign="end" (click)="openNewProduct()">New Product</button>
+
+        </div>
+    </mat-toolbar-row>
+    <mat-toolbar-row *ngIf="deviceXs" fxLayoutAlign="space-between end">
+        <button mat-button [matMenuTriggerFor]="stateMenu">State</button>
+        <button mat-button [matMenuTriggerFor]="disticMenu">District</button>
+        <button mat-button [matMenuTriggerFor]="mandalMenu">Mandal</button>
+        <button mat-button>
+            <mat-icon>filter_list</mat-icon>
+        </button>
+    </mat-toolbar-row>
+</mat-toolbar>
+
+<mat-sidenav-container>
+    <mat-sidenav #sidenav="matSidenav" class="mat-elevation-z8">
+        <button mat-button class="menu-button" *ngFor="let sideMenuTitle of sideMenuTitles"
+            (click)="openSideMenuDialog(sideMenuTitle.name)">
+            <mat-icon>{{sideMenuTitle.icon}}</mat-icon>
+            <span>{{sideMenuTitle.name}}</span>
+        </button>
+
+        <mat-divider></mat-divider>
+        <button mat-button class="menu-button" (click)="openAboutUs()">
+            <mat-icon>account_circle</mat-icon>
+            <span>About Us</span>
+        </button>
+        <button mat-button class="menu-button" (click)="openContactUs()">
+            <mat-icon>contact_support</mat-icon>
+            <span>Contact Us</span>
+        </button>
+        <button mat-button class="menu-button" [matMenuTriggerFor]="menu">
+            <mat-icon>language</mat-icon>
+            <span>Language</span>
+        </button>
+    </mat-sidenav>
+    <mat-sidenav-content>
+        <div class="content mat-elevation-z8">
+            <app-home></app-home>
+        </div>
+    </mat-sidenav-content>
+</mat-sidenav-container>
+<mat-menu #menu="matMenu">
+    <button mat-menu-item>Telugu</button>
+    <button mat-menu-item>English</button>
+</mat-menu>
+<mat-menu #stateMenu="matMenu">
+    <button mat-menu-item *ngFor="let state of stateList" [value]="state"
+        (click)="selectedState(state)">{{state}}</button>
+</mat-menu>
+<mat-menu #disticMenu="matMenu">
+    <button mat-menu-item *ngFor="let district of selectedDistricts" [value]="district"
+        (click)="selectedDistrict(district)">{{district}}</button>
+</mat-menu>
+<mat-menu #mandalMenu="matMenu">
+    <button mat-menu-item *ngFor="let mandal of selectedMandals" [value]="mandal">{{mandal}}</button>
+</mat-menu>

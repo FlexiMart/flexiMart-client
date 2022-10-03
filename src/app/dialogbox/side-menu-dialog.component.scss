@@ -1,0 +1,29 @@
+.mat-toolbar{
+    margin: -24px;
+    width: auto;
+    margin-bottom: 10px;
+    background-color: #d60943;
+    color: white;
+}
+.title-center{
+    flex: 1 1 auto;
+    text-align: center;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    font-weight: bold;
+}
+.avatar {
+    margin-top: 16px;
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+}
+span {
+    font-size: 15px;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    font-weight: bold;
+    margin-left: 16px;
+}
+.mat-button{
+    background-color: #d60943;
+    color: white;
+}

@@ -1,0 +1,63 @@
+.mat-toolbar {
+    width: auto;
+    margin-bottom: 10px;
+    background-color: #d60943;
+    color: white;
+}
+
+.menu-button {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    font-size: 1rem;
+    padding: 0px;
+}
+
+span {
+    font-size: 18px;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    text-align: center;
+
+}
+
+.mat-sidenav {
+    margin: 5px;
+    width: 200px;
+    border-right: none;
+    background: #d60943;
+    color: white;
+    border-radius: 10px;
+    padding: 10px;
+    text-align: center;
+}
+
+.content {
+    height: calc(100vh - 98px);
+    border-radius: 10px;
+    margin: 16px;
+    margin-left: 32px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    font-size: 2rem;
+    color: lightgray;
+}
+
+.mat-sidenav-container {
+    height: calc(100vh - 65px);
+}
+
+button:hover,
+.offcanvas button:focus {
+    color: #0e0c0b;
+    background-color: white;
+    font-weight: bolder;
+    font-style: italic;
+
+}
+
+.mat-icon {
+    margin: 10px;
+}

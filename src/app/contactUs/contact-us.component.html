@@ -1,0 +1,145 @@
+<!-- <mat-toolbar class="mat-elevation-z8">
+    <span class="title-center"><b>
+            <h2><i>Contact Us</i></h2>
+        </b></span>
+</mat-toolbar> -->
+<div>
+    <img class="jpg-icon"  src="../../../../assets/images/contant.jpg" 
+        style="max-width:100%; min-width: 100%; max-height: 200px;">
+</div>
+<mat-grid-list cols="2" rowHeight="1:1">
+    <mat-grid-tile>
+        <mat-card class="example-card">
+            <mat-card-header>
+                <span class="title-center"><h1 style="color: #d60943;"><b><i>How to Find Us</i></b></h1></span>
+            </mat-card-header>
+            <mat-divider class="right-divider"></mat-divider>
+            <mat-card-content>
+                <div>
+                <p style="margin-top: 40px;" align="center">
+                    If you have any questions, just fill in the contact form,<br/>
+                    and we will answer you shortly. If you are living nearby,<br/>
+                    come visit <b style="color: #d60943">FlexiMart</b> at one of our comfortable office.
+                </p>
+                </div>
+                <div style="margin-top: 50px;" align="center">
+                    <h2 style="color: #d60943;"><b>Headquarters</b></h2>
+                    <h4 style="margin-top: 20px; ">
+                        9863-9867 MILL ROAD, CAMBRIDGE, MG09 00HT.<br/>
+                        Telephone: +1 800 603 6035<br/>
+                        Email: <span style="color: #d60943">mail@fleximart.in</span>
+                    </h4>
+                </div>
+                <div style="margin-top: 50px;" align="center">
+                    <h2 style="color: #d60943;"><b>Support Center</b></h2>
+                    <h4 style="margin-top: 20px;">
+                        9863-9867 MILL ROAD, CAMBRIDGE, MG09 00HT.<br/>
+                        Telephone: +1 800 603 6035<br/>
+                        Email: <span style="color: #d60943">mail@fleximart.in</span>
+                    </h4>
+                </div>
+            </mat-card-content>
+            </mat-card>    
+    </mat-grid-tile>
+    <mat-grid-tile>
+        <mat-card class="example-card">
+            <mat-card-header>
+                <span class="title-center"><h1 style="color: #d60943;"><b><i>Get in Touch</i></b></h1></span>
+            </mat-card-header>
+            <mat-divider class="left-divider"></mat-divider>
+            <mat-card-content>
+                <form id="contact" [formGroup]="contactForm">
+                      <mat-form-field appearance="outline" fxFlex>
+                            <mat-label>FullName</mat-label>
+                            <input matInput formControlName="name" required>
+                            <mat-error *ngIf="contactForm.controls.name.touched && contactForm.controls.name.invalid">
+                                <span *ngIf="contactForm.controls.name.errors.required">This field is mandatory.</span>
+                                <span *ngIf="contactForm.controls.name.errors.pattern">This field is invalid.</span>
+                            </mat-error>
+                        </mat-form-field>
+                        <mat-form-field appearance="outline" fxFlex>
+                            <mat-label>Email</mat-label>
+                            <input matInput formControlName="email" required>
+                            <mat-error *ngIf="contactForm.controls.email.touched && contactForm.controls.email.invalid">
+                                <span *ngIf="contactForm.controls.email.errors.required">This field is mandatory.</span>
+                                <span *ngIf="contactForm.controls.email.errors.pattern">This field is invalid.</span>
+                            </mat-error>
+                        </mat-form-field>           
+                        <mat-form-field appearance="outline" fxFlex>
+                            <mat-label>Phone Number</mat-label>
+                            <input matInput type="number" formControlName="phoneNumber" required>
+                            <mat-error *ngIf="contactForm.controls.phoneNumber.touched && contactForm.controls.phoneNumber.invalid">
+                                <span *ngIf="contactForm.controls.phoneNumber.errors.required">This field is mandatory.</span>
+                                <span *ngIf="contactForm.controls.phoneNumber.errors.pattern">This is field is invalid.</span>
+                            </mat-error>
+                        </mat-form-field>
+                        <mat-form-field appearance="outline" fxFlex>
+                            <mat-label>Comment Here</mat-label>
+                            <textarea matInput type="text" formControlName="comment" required></textarea>
+                            <mat-error *ngIf="contactForm.controls.comment.touched && contactForm.controls.comment.invalid">
+                              <span *ngIf="contactForm.controls.comment.errors.required">This field is mandatory.</span>
+                            </mat-error>
+                        </mat-form-field>
+                    </form>
+            </mat-card-content>
+            <mat-card-actions style="margin-top: -50px; margin-left: 5px;">
+                <button mat-button type="submit" class="sumbit-btn" (click)="handleContactUsSubmit()"
+                [disabled]="contactForm.invalid">Submit</button>
+                <button mat-button (click)="contactCloseAction()">Close</button>
+            </mat-card-actions>
+          
+        </mat-card>
+           
+    </mat-grid-tile>
+       
+</mat-grid-list>
+<div>
+    <!-- <img class="jpg-icon"  src="../../../../assets/images/location_map.png" 
+        style="max-width:100%; min-width: 100%; max-height: 320px;"> -->
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3585.571860516253!2d28.104916915026163!3d-26.014838783522524!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x1e956e0fafb856f1%3A0xeb489d05fbd8c454!2sMall%20of%20Africa!5e0!3m2!1sen!2sza!4v1662809631033!5m2!1sen!2sza" width="600" height="450" style="border:0;max-width:100%; min-width: 100%; max-height: 320px;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+</div>
+<!-- <div class="container"> -->
+    <!-- <form id="contact" [formGroup]="contactForm">
+        <h3>Quick Contact!</h3>
+        <h4>Contact us today, and get reply with in 24 hours!</h4>
+        <mat-divider></mat-divider>
+        <div fxFlex fxLayout="row">
+            <mat-form-field appearance="fill" fxFlex>
+                <mat-label>FullName</mat-label>
+                <input matInput formControlName="name" required autofocus>
+                <mat-error *ngIf="contactForm.controls.name.touched && contactForm.controls.name.invalid">
+                    <span *ngIf="contactForm.controls.name.errors.required">This field is mandatory.</span>
+                    <span *ngIf="contactForm.controls.name.errors.pattern">This field is invalid.</span>
+                </mat-error>
+            </mat-form-field>
+            <mat-form-field appearance="fill" fxFlex>
+                <mat-label>Email</mat-label>
+                <input matInput formControlName="email" required>
+                <mat-error *ngIf="contactForm.controls.email.touched && contactForm.controls.email.invalid">
+                    <span *ngIf="contactForm.controls.email.errors.required">This field is mandatory.</span>
+                    <span *ngIf="contactForm.controls.email.errors.pattern">This field is invalid.</span>
+                </mat-error>
+            </mat-form-field>
+            <mat-form-field appearance="fill" fxFlex>
+                <mat-label>Phone Number</mat-label>
+                <input matInput type="number" formControlName="phoneNumber" required>
+                <mat-error *ngIf="contactForm.controls.phoneNumber.touched && contactForm.controls.phoneNumber.invalid">
+                    <span *ngIf="contactForm.controls.phoneNumber.errors.required">This field is mandatory.</span>
+                    <span *ngIf="contactForm.controls.phoneNumber.errors.pattern">This is field is invalid.</span>
+                </mat-error>
+            </mat-form-field>
+            <mat-form-field appearance="fill" fxFlex>
+                <mat-label>Comment Here</mat-label>
+                <textarea matInput type="text" formControlName="comment" required></textarea>
+                <mat-error *ngIf="contactForm.controls.comment.touched && contactForm.controls.comment.invalid">
+                  <span *ngIf="contactForm.controls.comment.errors.required">This field is mandatory.</span>
+                </mat-error>
+            </mat-form-field>
+                <button mat-button type="submit" (click)="handleContactUsSubmit()"
+                [disabled]="contactForm.invalid">Submit</button>
+                <button mat-button (click)="contactCloseAction()">Close</button>
+           
+        </div>
+    </form> -->
+
+<!-- </div> -->

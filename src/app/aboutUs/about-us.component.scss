@@ -1,0 +1,61 @@
+.mat-toolbar {
+    width: auto;
+    margin-bottom: 10px;
+    background-color: #7f1734;
+    color: white;
+}
+.title-center{
+    flex: 1 1 auto;
+    text-align: center;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    font-weight: bold;
+}
+.main-text{
+    text-align:  center;
+    color: black;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    margin: 30px;
+}
+.avatar {
+    margin: 20px;
+    width: 550px;
+    height: 250px;
+    border-radius: 0%;
+
+}
+p {
+    font-family: "Lato", sans-serif;
+    text-align: justify;
+  }
+  .example-card {
+    max-width: 450px;
+    margin: 5px;
+    box-shadow: 0px 0px 10px 0px #7c8934;
+  }
+  .mat-card-title {
+    color: #d60943;
+    justify-content: center;
+    display: flex;
+  }
+ .agricultureContent{
+    margin-left: -0px;
+ }
+ .animalsContent{
+    margin-left: 0px;
+ }
+ .example-card {
+    max-width: 600px;
+  }
+  
+  .example-header-image {
+    background-image: url('https://material.angular.io/assets/img/examples/shiba1.jpg');
+    background-size: cover;
+  }
+ .ourteam{
+    width: 20px;
+    height: 150px;
+    
+ }
+ .simple-card {
+    margin: 30px;
+ }

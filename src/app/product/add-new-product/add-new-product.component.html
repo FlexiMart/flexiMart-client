@@ -1,0 +1,418 @@
+<!-- <mat-toolbar class="mat-elevation-z8">
+   <span class="title-center"><b>
+         <h2><i>Add New Product</i></h2>
+      </b></span>
+</mat-toolbar> -->
+<div>
+   <img class="jpg-icon"  src="../../../../assets/images/new-product.jpg" 
+       style="max-width:100%; min-width: 100%; max-height: 100px;">
+</div>
+<mat-horizontal-stepper [linear]="isLinear" #stepper labelPosition="bottom">
+   <mat-step [stepControl]="personInfoForm" label="Personal Info" [editable]="isPersonInfoEditable">
+      <div style="padding-top: 3%;">
+         <div class="container">
+         <form name="form" [formGroup]="personInfoForm">
+            <!-- <ng-template matStepLabel>Name</ng-template> -->
+            <div fxFlex fxLayout="column">
+               <mat-form-field appearance="outline"  fxFlex>
+                  <mat-label>Your FullName</mat-label>
+                  <input matInput formControlName="fullName" required autofocus>
+                  <mat-error
+                     *ngIf="personInfoForm.controls.fullName.touched && personInfoForm.controls.fullName.invalid">
+                     <span *ngIf="personInfoForm.controls.fullName.errors.required">This field is mandatory.</span>
+                     <span *ngIf="personInfoForm.controls.fullName.errors.pattern">This field is invalid.</span>
+                  </mat-error>
+               </mat-form-field>
+               <br />
+               <mat-form-field appearance="outline" fxFlex>
+                  <mat-label>Mobile Number</mat-label>
+                  <input matInput formControlName="contactNumber" required>
+                  <mat-error
+                     *ngIf="personInfoForm.controls.contactNumber.touched && personInfoForm.controls.contactNumber.invalid">
+                     <span *ngIf="personInfoForm.controls.contactNumber.errors.required">This field is mandatory.</span>
+                     <span *ngIf="personInfoForm.controls.contactNumber.errors.pattern">This field is invalid.</span>
+                  </mat-error>
+               </mat-form-field>
+               <br />
+               <mat-form-field appearance="outline" fxFlex>
+                  <mat-label>Select State</mat-label>
+                  <mat-select formControlName="state" (selectionChange)="changeState($event.value)">
+                     <mat-option *ngFor="let state of statesList" [value]="state">
+                        {{state}}
+                     </mat-option>
+                  </mat-select>
+                  <mat-error *ngIf="personInfoForm.controls.state.touched && personInfoForm.controls.state.invalid">
+                     <span *ngIf="personInfoForm.controls.state.errors.required">This field is mandatory.</span>
+                  </mat-error>
+               </mat-form-field>
+               <br />
+               <mat-form-field appearance="outline" fxFlex>
+                  <mat-label>Select District/City*</mat-label>
+                  <mat-select formControlName="district" (selectionChange)="changeDistrict($event.value)">
+                     <mat-option *ngFor="let district of districtList" [value]="district">
+                        {{district}}
+                     </mat-option>
+                  </mat-select>
+                  <mat-error
+                     *ngIf="personInfoForm.controls.district.touched && personInfoForm.controls.district.invalid">
+                     <span *ngIf="personInfoForm.controls.district.errors.required">This field is mandatory.</span>
+                  </mat-error>
+               </mat-form-field>
+               <br />
+               <mat-form-field appearance="outline" fxFlex>
+                  <mat-label>Select Mandal/Area*</mat-label>
+                  <mat-select formControlName="mandal" (selectionChange)="changeMandal($event.value)">
+                     <mat-option *ngFor="let mandal of mandalList" [value]="mandal">
+                        {{mandal}}
+                     </mat-option>
+                  </mat-select>
+                  <mat-error *ngIf="personInfoForm.controls.mandal.touched && personInfoForm.controls.mandal.invalid">
+                     <span *ngIf="personInfoForm.controls.mandal.errors.required">This field is mandatory.</span>
+                  </mat-error>
+               </mat-form-field>
+               <br />
+               <mat-form-field appearance="outline" fxFlex>
+                  <mat-label>Your Village/Street</mat-label>
+                  <input matInput formControlName="village" required>
+                  <mat-error *ngIf="personInfoForm.controls.village.touched && personInfoForm.controls.village.invalid">
+                     <span *ngIf="personInfoForm.controls.village.errors.required">This field is mandatory.</span>
+                     <span *ngIf="personInfoForm.controls.village.errors.pattern">This field is invalid.</span>
+                  </mat-error>
+               </mat-form-field>
+               <br />
+               <mat-form-field appearance="outline" fxFlex>
+                  <mat-label>Your House No</mat-label>
+                  <input matInput formControlName="hno" required>
+                  <mat-error *ngIf="personInfoForm.controls.hno.touched && personInfoForm.controls.hno.invalid">
+                     <span *ngIf="personInfoForm.controls.hno.errors.required">This field is mandatory.</span>
+                     <span *ngIf="personInfoForm.controls.hno.errors.pattern">This field is invalid.</span>
+                  </mat-error>
+               </mat-form-field>
+               <br />
+            </div>
+            <br />
+            <button mat-raised-button [disabled]="personInfoForm.invalid" matStepperNext
+               (click)="saveUserInfo()">Next</button>
+         </form>
+         </div>
+      </div>
+   </mat-step>
+
+   <mat-step [stepControl]="mobileVerifyForm" label="Mobile Verification" [editable]="isMobileVerifyEditable">
+      <div style="padding-top: 3%;">
+         <div class="container">
+            <mat-card>
+               <mat-card-title align="center">Mobile Verification</mat-card-title>
+               <mat-divider style="padding-bottom: 1px;background-color:#d60943;"></mat-divider>
+               <mat-card-content style="margin:45px">
+                  <mat-label>Enter OTP</mat-label>
+            <ngx-otp-input 
+            [config]="otpInputConfig"
+            (otpchange)="handleOtpChange($event)"
+            (fill)="handleFillEvent($event,2,stepper)"></ngx-otp-input>
+            </mat-card-content>
+                        
+            </mat-card>
+            </div>
+      </div>
+   </mat-step>
+
+   <mat-step [stepControl]="addNewProductGroup" label="Add New Product"  [editable]="isNewProductEditable">
+      <div style="padding-top: 3%;">
+         <div class="container">
+         <form [formGroup]="addNewProductGroup">
+            <!-- <ng-template matStepLabel>Name</ng-template> -->
+            <div fxFlex fxLayout="column">
+               <mat-form-field appearance="outline" fxFlex>
+                  <mat-label>Select Product Type</mat-label>
+                  <mat-select formControlName="productType" (selectionChange)="changeProductType($event.value)">
+                     <mat-option *ngFor="let product of productType" [value]="product">
+                        {{product}}
+                     </mat-option>
+                  </mat-select>
+                  <mat-error *ngIf="addNewProductGroup.controls.productType.touched && addNewProductGroup.controls.productType.invalid">
+                     <span *ngIf="addNewProductGroup.controls.productType.errors.required">This field is mandatory.</span>
+                  </mat-error>
+               </mat-form-field>
+               <br />
+                 <div [formGroup]="agricultureForm" *ngIf="isAgricultureForm">
+                  <div fxFlex fxLayout="column">
+                     <mat-form-field appearance="outline" fxFlex>
+                        <mat-label>Select Product Name</mat-label>
+                        <mat-select formControlName="productName">
+                           <mat-option *ngFor="let product of productNamesList" [value]="product">
+                              {{product}}
+                           </mat-option>
+                        </mat-select>
+                        <mat-error *ngIf="agricultureForm.controls.productName.touched && agricultureForm.controls.productName.invalid">
+                           <span *ngIf="agricultureForm.controls.productName.errors.required">This field is mandatory.</span>
+                        </mat-error>
+                     </mat-form-field>
+                     <br />
+                     <mat-form-field appearance="outline" fxFlex>
+                        <mat-label>Year Of Model</mat-label>
+                        <input type="number" matInput formControlName="yearOfModel" required>
+                        <mat-error *ngIf="agricultureForm.controls.yearOfModel.touched && agricultureForm.controls.yearOfModel.invalid">
+                           <span *ngIf="agricultureForm.controls.yearOfModel.errors.required">This field is mandatory.</span>
+                           <span *ngIf="agricultureForm.controls.yearOfModel.errors.pattern">This field is invalid.</span>
+                        </mat-error>
+                     </mat-form-field>
+                     <br/>
+                     <mat-label style="margin-right: 16px;">Type:</mat-label>
+                     <mat-radio-group aria-label="Select an option" formControlName="type">
+                        <mat-radio-button value="new">New</mat-radio-button>
+                        <mat-radio-button value="old">Old</mat-radio-button>
+                      </mat-radio-group>
+                     <br/>
+                     <mat-form-field appearance="outline" fxFlex>
+                        <mat-label>Price in rupees</mat-label>
+                        <input type="number" matInput formControlName="price" required>
+                        <mat-error *ngIf="agricultureForm.controls.price.touched && agricultureForm.controls.price.invalid">
+                           <span *ngIf="agricultureForm.controls.price.errors.required">This field is mandatory.</span>
+                           <span *ngIf="agricultureForm.controls.price.errors.pattern">This field is invalid.</span>
+                        </mat-error>
+                     </mat-form-field>
+                     <br/>
+                  </div>
+                 </div>
+                 <div [formGroup]="animalsForm" *ngIf="isAnimalsForm">
+                  <div fxFlex fxLayout="column">
+                     <mat-form-field appearance="outline" fxFlex>
+                        <mat-label>Select animal Name</mat-label>
+                        <mat-select formControlName="animalName">
+                           <mat-option *ngFor="let animal of animalNamesList" [value]="animal">
+                              {{animal}}
+                           </mat-option>
+                        </mat-select>
+                        <mat-error *ngIf="animalsForm.controls.animalName.touched && animalsForm.controls.animalName.invalid">
+                           <span *ngIf="animalsForm.controls.animalName.errors.required">This field is mandatory.</span>
+                        </mat-error>
+                     </mat-form-field>
+                     <br />
+                     <mat-label style="margin-right: 16px;">Gender:</mat-label>
+                     <mat-radio-group aria-label="Select an option" formControlName="gender">
+                        <mat-radio-button value="male">Male</mat-radio-button>
+                        <mat-radio-button value="female">Female</mat-radio-button>
+                        <mat-radio-button value="both">Both</mat-radio-button>
+                      </mat-radio-group>
+                     <br/>
+                     <mat-form-field appearance="outline" fxFlex>
+                        <mat-label>Breed Type</mat-label>
+                        <input type="text" matInput formControlName="breedType" required>
+                        <mat-error *ngIf="animalsForm.controls.breedType.touched && animalsForm.controls.breedType.invalid">
+                           <span *ngIf="animalsForm.controls.breedType.errors.required">This field is mandatory.</span>
+                           <span *ngIf="animalsForm.controls.breedType.errors.pattern">This field is invalid.</span>
+                        </mat-error>
+                     </mat-form-field>
+                     <br/>
+                     <mat-form-field appearance="outline" fxFlex>
+                        <mat-label>No.of Quantity</mat-label>
+                        <input type="number" matInput formControlName="noOfQuantity" required>
+                        <mat-error *ngIf="animalsForm.controls.noOfQuantity.touched && animalsForm.controls.noOfQuantity.invalid">
+                           <span *ngIf="animalsForm.controls.noOfQuantity.errors.required">This field is mandatory.</span>
+                           <span *ngIf="animalsForm.controls.noOfQuantity.errors.pattern">This field is invalid.</span>
+                        </mat-error>
+                     </mat-form-field>
+                     <br/>
+                     <mat-form-field appearance="outline" fxFlex>
+                        <mat-label>Price in rupees</mat-label>
+                        <input type="number" matInput formControlName="price" required>
+                        <mat-error *ngIf="animalsForm.controls.price.touched && animalsForm.controls.price.invalid">
+                           <span *ngIf="animalsForm.controls.price.errors.required">This field is mandatory.</span>
+                           <span *ngIf="animalsForm.controls.price.errors.pattern">This field is invalid.</span>
+                        </mat-error>
+                     </mat-form-field>
+                  </div>
+                </div>
+                <div [formGroup]="furnitureForm" *ngIf="isFurnitureForm">
+                  <div fxFlex fxLayout="column">
+                     <mat-form-field appearance="outline" fxFlex>
+                        <mat-label>Select Furniture Name</mat-label>
+                        <mat-select formControlName="furnitureName">
+                           <mat-option *ngFor="let furniture of funitureNamesList" [value]="furniture">
+                              {{furniture}}
+                           </mat-option>
+                        </mat-select>
+                        <mat-error *ngIf="furnitureForm.controls.furnitureName.touched && furnitureForm.controls.furnitureName.invalid">
+                           <span *ngIf="furnitureForm.controls.furnitureName.errors.required">This field is mandatory.</span>
+                        </mat-error>
+                     </mat-form-field>
+                     <br />
+                     <mat-form-field appearance="outline" fxFlex>
+                        <mat-label>Wood Type</mat-label>
+                        <input type="text" matInput formControlName="woodType" required>
+                        <mat-error *ngIf="furnitureForm.controls.woodType.touched && furnitureForm.controls.woodType.invalid">
+                           <span *ngIf="furnitureForm.controls.woodType.errors.required">This field is mandatory.</span>
+                           <span *ngIf="furnitureForm.controls.woodType.errors.pattern">This field is invalid.</span>
+                        </mat-error>
+                     </mat-form-field>
+                     <br/>
+                     <mat-label style="margin-right: 16px;">Type:</mat-label>
+                     <mat-radio-group aria-label="Select an option" formControlName="type">
+                        <mat-radio-button value="new">New</mat-radio-button>
+                        <mat-radio-button value="old">Old</mat-radio-button>
+                      </mat-radio-group>
+                     <br/>
+                     <mat-form-field appearance="outline" fxFlex>
+                        <mat-label>Price in rupees</mat-label>
+                        <input type="number" matInput formControlName="price" required>
+                        <mat-error *ngIf="furnitureForm.controls.price.touched && furnitureForm.controls.price.invalid">
+                           <span *ngIf="furnitureForm.controls.price.errors.required">This field is mandatory.</span>
+                           <span *ngIf="furnitureForm.controls.price.errors.pattern">This field is invalid.</span>
+                        </mat-error>
+                     </mat-form-field>
+                </div>
+                </div>
+                <div [formGroup]="electronicsForm" *ngIf="isElectronicsForm">
+                  <div fxFlex fxLayout="column">
+                     <mat-form-field appearance="outline" fxFlex>
+                        <mat-label>Select Electronic Name</mat-label>
+                        <mat-select formControlName="electronicName">
+                           <mat-option *ngFor="let electronic of electronicNamesList" [value]="electronic">
+                              {{electronic}}
+                           </mat-option>
+                        </mat-select>
+                        <mat-error *ngIf="electronicsForm.controls.electronicName.touched && electronicsForm.controls.electronicName.invalid">
+                           <span *ngIf="electronicsForm.controls.electronicName.errors.required">This field is mandatory.</span>
+                        </mat-error>
+                     </mat-form-field>
+                     <br />
+                     <mat-form-field appearance="outline" fxFlex>
+                        <mat-label>Brand Name</mat-label>
+                        <input type="text" matInput formControlName="brandName" required>
+                        <mat-error *ngIf="electronicsForm.controls.brandName.touched && electronicsForm.controls.brandName.invalid">
+                           <span *ngIf="electronicsForm.controls.brandName.errors.required">This field is mandatory.</span>
+                           <span *ngIf="electronicsForm.controls.brandName.errors.pattern">This field is invalid.</span>
+                        </mat-error>
+                     </mat-form-field>
+                     <br/>
+                     <mat-form-field appearance="outline" fxFlex>
+                        <mat-label>Year Of Model</mat-label>
+                        <input type="text" matInput formControlName="brandName" required>
+                        <mat-error *ngIf="electronicsForm.controls.yearOfModel.touched && electronicsForm.controls.yearOfModel.invalid">
+                           <span *ngIf="electronicsForm.controls.yearOfModel.errors.required">This field is mandatory.</span>
+                           <span *ngIf="electronicsForm.controls.yearOfModel.errors.pattern">This field is invalid.</span>
+                        </mat-error>
+                     </mat-form-field>
+                     <br/>
+                     <mat-label style="margin-right: 16px;">Type:</mat-label>
+                     <mat-radio-group aria-label="Select an option" formControlName="type">
+                        <mat-radio-button value="new">New</mat-radio-button>
+                        <mat-radio-button value="old">Old</mat-radio-button>
+                      </mat-radio-group>
+                     <br/>
+                     <mat-form-field appearance="outline" fxFlex>
+                        <mat-label>Price in rupees</mat-label>
+                        <input type="number" matInput formControlName="price" required>
+                        <mat-error *ngIf="electronicsForm.controls.price.touched && electronicsForm.controls.price.invalid">
+                           <span *ngIf="electronicsForm.controls.price.errors.required">This field is mandatory.</span>
+                           <span *ngIf="electronicsForm.controls.price.errors.pattern">This field is invalid.</span>
+                        </mat-error>
+                     </mat-form-field>
+                  </div>
+               </div>
+               <div [formGroup]="vehicleForm" *ngIf="isVehiclesForm">
+                  <div fxFlex fxLayout="column">
+                     <mat-form-field appearance="outline" fxFlex>
+                        <mat-label>Select Electronic Name</mat-label>
+                        <mat-select formControlName="vehicleName">
+                           <mat-option *ngFor="let vehicle of vehicleNameList" [value]="vehicle">
+                              {{vehicle}}
+                           </mat-option>
+                        </mat-select>
+                        <mat-error *ngIf="vehicleForm.controls.vehicleName.touched && vehicleForm.controls.vehicleName.invalid">
+                           <span *ngIf="vehicleForm.controls.vehicleName.errors.required">This field is mandatory.</span>
+                        </mat-error>
+                     </mat-form-field>
+                     <br />
+                     <mat-form-field appearance="outline" fxFlex>
+                        <mat-label>Brand Name</mat-label>
+                        <input type="text" matInput formControlName="brandName" required>
+                        <mat-error *ngIf="vehicleForm.controls.brandName.touched && vehicleForm.controls.brandName.invalid">
+                           <span *ngIf="vehicleForm.controls.brandName.errors.required">This field is mandatory.</span>
+                           <span *ngIf="vehicleForm.controls.brandName.errors.pattern">This field is invalid.</span>
+                        </mat-error>
+                     </mat-form-field>
+                     <br/>
+                     <mat-form-field appearance="outline" fxFlex>
+                        <mat-label>Model Name</mat-label>
+                        <input type="text" matInput formControlName="modelName" required>
+                        <mat-error *ngIf="vehicleForm.controls.modelName.touched && vehicleForm.controls.modelName.invalid">
+                           <span *ngIf="vehicleForm.controls.modelName.errors.required">This field is mandatory.</span>
+                           <span *ngIf="vehicleForm.controls.modelName.errors.pattern">This field is invalid.</span>
+                        </mat-error>
+                     </mat-form-field>
+                     <br/>
+                     <mat-label style="margin-right: 16px;">Fuel Type:</mat-label>
+                     <mat-radio-group aria-label="Select an option" formControlName="fuelType">
+                        <mat-radio-button value="petrol">Petrol</mat-radio-button>
+                        <mat-radio-button value="diesel">Diesel</mat-radio-button>
+                      </mat-radio-group>
+                     <br/>
+                     <mat-form-field appearance="outline" fxFlex>
+                        <mat-label>Used KM</mat-label>
+                        <input type="number" matInput formControlName="usedKM" required>
+                        <mat-error *ngIf="vehicleForm.controls.usedKM.touched && vehicleForm.controls.usedKM.invalid">
+                           <span *ngIf="vehicleForm.controls.usedKM.errors.required">This field is mandatory.</span>
+                           <span *ngIf="vehicleForm.controls.usedKM.errors.pattern">This field is invalid.</span>
+                        </mat-error>
+                     </mat-form-field>
+                     <br/>
+                     <mat-label style="margin-right: 16px;">Type:</mat-label>
+                     <mat-radio-group aria-label="Select an option" formControlName="type">
+                        <mat-radio-button value="new">New</mat-radio-button>
+                        <mat-radio-button value="old">Old</mat-radio-button>
+                      </mat-radio-group>
+                     <br/>
+                     <mat-form-field appearance="outline" fxFlex>
+                        <mat-label>Price in Rupees</mat-label>
+                        <input type="number" matInput formControlName="price" required>
+                        <mat-error *ngIf="vehicleForm.controls.price.touched && vehicleForm.controls.price.invalid">
+                           <span *ngIf="vehicleForm.controls.price.errors.required">This field is mandatory.</span>
+                           <span *ngIf="vehicleForm.controls.price.errors.pattern">This field is invalid.</span>
+                        </mat-error>
+                     </mat-form-field>
+                  </div>
+                </div>
+                <div *ngIf="isSaleRentForm">
+                 <h3>Sales&Rents Title..!</h3>
+               </div>
+               <div *ngIf="isLabourWorkForm">
+                  <h3>Labour Work Title..!</h3>
+                </div>
+                <div *ngIf="isInformationForm">
+                 <h3>Information Title..!</h3>
+               </div>
+               <br />
+            </div>
+            <button mat-raised-button color="primary" matStepperNext
+                  (click)="addNewPersonAction()">Next</button>
+
+         </form>
+      </div>
+      </div>
+   </mat-step>
+ 
+   <mat-step label="Done">
+      <div style="padding-top: 3%;">
+         <div class="login-form-flex">
+            <mat-card>
+               <mat-card-title>
+                 <span class="title-center"><h2><i>Success Message!</i></h2></span>
+               </mat-card-title>
+               <mat-divider></mat-divider>
+               <mat-card-content>
+                <span>Thank You</span>
+               </mat-card-content>
+               <mat-card-actions>
+                 <div class="button-flex-container">
+                   <button mat-raised-button (click)="doneAction()">Done</button>
+                 </div>
+               </mat-card-actions>
+             </mat-card>
+         </div>          
+      </div>
+   </mat-step>
+
+  
+</mat-horizontal-stepper>

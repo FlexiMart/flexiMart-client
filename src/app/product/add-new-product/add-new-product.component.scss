@@ -1,0 +1,63 @@
+.mat-toolbar {
+    width: auto;
+    margin-bottom: 10px;
+    background-color: #7f1734;
+    color: white;
+}
+.title-center{
+    flex: 1 1 auto;
+    text-align: center;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    font-weight: bold;
+}
+p {
+    font-family: Lato;
+  }
+   ::ng-deep .mat-step-header .mat-step-icon-selected {
+    background-color: #d60943; 
+ }
+
+
+ .mat-raised-button  {
+    background-color: #d60943;
+    color: white;
+ }
+ .mat-form-field {
+  margin-top: 8px;
+}
+.login-form-flex {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    
+  }
+  .mat-card {
+    width: 350px;
+    height: 250px;
+    color: #d60943;
+    box-shadow: 0px 0px 10px 0px #7c8934;
+  }
+  .button-flex-container {
+    display: flex;
+    width: 100%;
+    justify-content: flex-end;
+    
+  }
+.mat-form-field {
+  background-color: white;
+  width: 100%;
+ 
+}
+.container {
+	max-width:400px;
+	width:100%;
+	margin:0 auto;
+	position:relative;
+}
+.mat-radio-button ~ .mat-radio-button {
+  margin-left: 16px;
+}
+.mat-radio-button.mat-accent .mat-radio-ripple .mat-ripple-element {
+  background-color:rgb(255, 37, 37,.26);
+}

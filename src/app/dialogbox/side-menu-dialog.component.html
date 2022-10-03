@@ -1,0 +1,27 @@
+<mat-toolbar>
+    <mat-toolbar-row fxLayout="row">
+       <h2 class="title-center">{{subMenuDialogTitle}}</h2>
+    </mat-toolbar-row>
+</mat-toolbar>
+<mat-dialog-content class="mat-typography">
+    <mat-selection-list >
+        <mat-list-option *ngFor="let subMenuDialogItems of data" (click)="getValue(subMenuDialogItems.name)">
+          <div>
+          <img class="avatar mat-elevation-z8" src="{{subMenuDialogItems.url}}"/>
+          <span style="padding-bottom: 30px;"><b>{{subMenuDialogItems.name}}</b></span>
+          </div>
+        </mat-list-option>
+      </mat-selection-list>
+      <!-- <mat-list role="list" *ngFor="let subMenuDialogItems of data">
+        <mat-list-item role="listitem">
+             <img class="avatar mat-elevation-z8" src="{{subMenuDialogItems.url}}"/>
+             <span style="margin-bottom:-13px"><b>{{subMenuDialogItems.name}}</b></span>
+            </mat-list-item>
+       
+      </mat-list> -->
+</mat-dialog-content>
+<mat-dialog-actions align="center">
+    <button mat-raised-button mat-button>Search</button>
+    <button mat-raised-button mat-button mat-dialog-close>Close</button>
+</mat-dialog-actions>
+
