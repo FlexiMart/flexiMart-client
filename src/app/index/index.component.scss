@@ -1,6 +1,5 @@
 .mat-toolbar {
     width: auto;
-    margin-bottom: 10px;
     background-color: #d60943;
     color: white;
 }
@@ -14,11 +13,20 @@
     padding: 0px;
 }
 
-span {
+.project-title {
+    font-size: 30px;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    text-align: center;
+    font-weight: bold;
+    font-style: italic;
+}
+
+.toolbar-titles {
     font-size: 18px;
     font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
     text-align: center;
-
+    font-weight: bold;
+    font-style: italic;
 }
 
 .mat-sidenav {
@@ -40,7 +48,6 @@ span {
     display: flex;
     justify-content: center;
     align-items: center;
-
     font-size: 2rem;
     color: lightgray;
 }
@@ -60,4 +67,5 @@ button:hover,
 
 .mat-icon {
     margin: 10px;
+    
 }

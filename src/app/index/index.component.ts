@@ -16,12 +16,11 @@ import { GlobalConstants } from '../shared/global-constants';
   styleUrls: ['./index.component.scss']
 })
 export class IndexComponent implements OnInit {
-
   @ViewChild(MatSidenav)
   sidenav!: MatSidenav;
 
   mediaSub!: Subscription;
-  deviceXs!: boolean;
+  // deviceXs!: boolean;
   selectedDistricts: string[] | undefined;
   selectedMandals: string[] | undefined;
 
@@ -30,45 +29,8 @@ export class IndexComponent implements OnInit {
   districtList = GlobalConstants.districts;
   mandalList = GlobalConstants.telanganaDistictMandals;
 
-  //side menu titles
-  sideMenuTitles = [
-    {
-      "icon": 'landscape',
-      "name": 'Agriculture'
-    },
-    {
-      "icon": 'home',
-      "name": 'Animals'
-    },
-    {
-      "icon": 'weekend',
-      "name": 'Furniture'
-    },
-    {
-      "icon": 'devices',
-      "name": 'Electronics'
-    },
-    {
-      "icon": 'directions_car',
-      "name": 'Vehicles'
-    },
-    {
-      "icon": 'room',
-      "name": 'Sale&Rent'
-    },
-    {
-      "icon": 'work',
-      "name": 'Labour Work'
-    },
-    {
-      "icon": 'info',
-      "name": 'Information'
-    },
-    {
-      "icon": 'spa',
-      "name": 'Solution'
-    }
-  ]
+  //sidebar menu details
+  sideBarMenuTitles = GlobalConstants.sideBarMenuTitles;
 
   //side menu sub titles 
   sideMenuSubTitles = [
@@ -504,13 +466,13 @@ export class IndexComponent implements OnInit {
     private dataTransfer:DataTransferService) { }
 
   ngOnInit(): void {
-    this.mediaSub = this.mediaObserver.media$.subscribe(
-      (result: MediaChange) => {
-        this.deviceXs = result.mqAlias === 'xs' ? true : false;
-      }
-    );
+    // this.mediaSub = this.mediaObserver.media$.subscribe(
+    //   (result: MediaChange) => {
+    //     this.deviceXs = result.mqAlias === 'xs' ? true : false;
+    //   }
+    // );
   }
-  openSideMenuDialog(selectedSideMenuItems: string): void {
+  openSideBarMenuDialogBox(selectedSideMenuItems: string): void {
     const dialogConfig = new MatDialogConfig();
     dialogConfig.width = "350px";
     if (selectedSideMenuItems == 'Agriculture') {
@@ -542,7 +504,7 @@ export class IndexComponent implements OnInit {
     this.dialog.open(FilterDialogComponent, dialogConfig);
   }
 
-  selectedState(selectedState: string): any {
+  selectingStateOnToolBar(selectedState: string): any {
     console.log(selectedState);
     if (selectedState == 'Andhra Pradesh') {
       this.selectedDistricts = this.districtList[0].andhraDistricts;
@@ -551,7 +513,7 @@ export class IndexComponent implements OnInit {
     }
 
   }
-  selectedDistrict(selectedDistrict: string): any {
+  selectingDistrictOnToolBar(selectedDistrict: string): any {
     console.log(selectedDistrict);
     if (selectedDistrict == 'Adilabad') {
       this.selectedMandals = this.mandalList[0].adilabadMandals;
@@ -611,8 +573,10 @@ export class IndexComponent implements OnInit {
   openAboutUs() {
     this.router.navigate(['about']);
   }
-  openNewProduct() {
+  openAddNewProduct() {
     this.router.navigate(['product']);
   }
+
+ 
 
 }

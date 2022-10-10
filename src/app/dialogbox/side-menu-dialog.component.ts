@@ -17,7 +17,8 @@ export class SideMenuDialogComponent implements OnInit {
     this.subMenuDialogTitle=this.data[0].title;
   }
   getValue(event:any){
-    console.log(event);
+    console.log("Submenu: "+event);
+    this.dialogRef.close();
 }
 
 }

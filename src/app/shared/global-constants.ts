@@ -121,6 +121,46 @@ export class GlobalConstants {
       }
    ]
 
+   //product names
+   public static sideBarMenuTitles = [
+      {
+        "icon": 'landscape',
+        "name": 'Agriculture'
+      },
+      {
+        "icon": 'home',
+        "name": 'Animals'
+      },
+      {
+        "icon": 'weekend',
+        "name": 'Furniture'
+      },
+      {
+        "icon": 'devices',
+        "name": 'Electronics'
+      },
+      {
+        "icon": 'directions_car',
+        "name": 'Vehicles'
+      },
+      {
+        "icon": 'room',
+        "name": 'Sale&Rent'
+      },
+      {
+        "icon": 'work',
+        "name": 'Labour Work'
+      },
+      {
+        "icon": 'info',
+        "name": 'Information'
+      },
+      {
+        "icon": 'spa',
+        "name": 'Solution'
+      }
+    ]
+
    //different Agriculture Product Names for assign to productName Dropdown list.
   public static agricultureProductName=['Agriculture Tractor','Tractor Cultivate Items','Pesticide Machine','Current Motor','Drip Motor','Solar Set','Bull Cultivate Items','Human Caltivate Items','Labour Work'];
 
