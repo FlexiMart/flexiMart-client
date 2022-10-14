@@ -21,7 +21,7 @@ export class GlobalConstants {
          "andhraDistricts": ['Alluri Sitharama Raju', 'Anakapalli', 'Anantapuram', 'Annamayya', 'Bapatla', 'Chittoor', 'Dr.B.R.Ambedkar Konaseema', 'East Godavari', 'Eluru', 'Guntur', 'Kakinada', 'Krishna', 'Kurnool', 'Nandyal', 'Nellore', 'NTR', 'Palnadu', 'Parvathipuram Manyam', 'Prakasam', 'Srikakulam', 'Sri Sathya Sai', 'Tirupati', 'Visakhapatnam', 'Vizianagaram', 'West Godavari', 'YSR Kadapa']
       },
       {
-         "telanganaDistricts": ['Adilabad', 'Asifabad', 'Bhadradri-Kothagudem', 'Bhupalpally', 'Gadwal', 'Hyderabad', 'Jagitial', 'Janagama', 'Kamareddy', 'Karimnagar', 'Khammam', 'Mahabubabad', 'Mahabubnagar', 'Mancherial', 'Medchal', 'Medak', 'Mulugu', 'Nagarkurnool', 'Nalgonda', 'Nirmal', 'Narayanpet', 'Nizamabad', 'Peddapalli', 'Rajanna Sircilla', 'Ranga Reddy', 'Sangareddy', 'Siddipet', 'Suryapet', 'Vikarabad', 'Wanaparthy', 'Warangal(Rural)', 'Warangal(Urban)', 'Yadadri-Bhuvanagiri']
+         "telanganaDistricts": ['Adilabad', 'Asifabad', 'Bhadradri-Kothagudem', 'Bhupalpally', 'Gadwal','Hanamkonda', 'Hyderabad', 'Jagitial', 'Janagama', 'Kamareddy', 'Karimnagar', 'Khammam', 'Mahabubabad', 'Mahabubnagar', 'Mancherial', 'Medchal', 'Medak', 'Mulugu', 'Nagarkurnool', 'Nalgonda', 'Nirmal', 'Narayanpet', 'Nizamabad', 'Peddapalli', 'Rajanna Sircilla', 'Ranga Reddy', 'Sangareddy', 'Siddipet', 'Suryapet', 'Vikarabad', 'Wanaparthy', 'Warangal', 'Yadadri-Bhuvanagiri']
       }
    ]
    //mandals of Telangana disticts
@@ -36,13 +36,16 @@ export class GlobalConstants {
          "bhadradriMandals": ['Allapalli', 'Annapureddypalli', 'Aswaraopeta', 'Aswapuram', 'Bhadrachalam', 'Burgampahad', 'Chandrugonda', 'Cherla', 'Chunchupalli', 'Dammapeta', 'Dummugudem', 'Gundala', 'Julurpad', 'Karakagudem', 'Kothagudem', 'Laxmidevipalli', 'Manuguru', 'Mulakalapally', 'Palvancha', 'Pinapaka', 'Sujatanagar', 'Tekulapally', 'Yellandu']
       },
       {
-         "bhoopalpallyMandals": ['Bhupalpally', 'Chityal', 'Ghanapur(Mulug)', 'Kataram', 'Mahadevpur', 'Malhar rao', 'Mogullapalle', 'Mutharam(Mahadevpur)', 'Palimela', 'Regonda', 'Tekumatla']
+         "bhupalpallyMandals": ['Bhupalpally', 'Chityal', 'Ghanapur(Mulug)', 'Kataram', 'Mahadevpur', 'Malhar rao', 'Mogullapalle', 'Mutharam(Mahadevpur)', 'Palimela', 'Regonda', 'Tekumatla']
       },
       {
          "gadwalMandals": ['Aiza', 'Alampur', 'Dharoor', 'Gadwal', 'Gattu', 'Itikyala', 'Kalur Thimman Doddi', 'Maldakal', 'Manopad', 'Rajoli', 'Undavelly', 'Waddepally']
       },
       {
-         "hyderabadMandals": ['Vijayawada Urban', 'Machilipatnam', 'Penamaluru', 'Gudivada', 'Vijayawada Rural', 'Nuzvid']
+         "hanamkondaMandals": ['Athmakur', 'Bheemadevarapalli','Damera', 'Dharmasagar', 'Elkathurthi', 'Hanamkonda', 'Hasanparthy', 'Inavolu','Kamalapur','Khaazipet','Nadikuda','Parkal','Shayampet','Velair']
+      },
+      {
+         "hyderabadMandals": ['Amberpet', 'Bahadurpura', 'Chandrayanagutta', 'Charminar', 'Goshamahal', 'Jubilee Hills','Karwan','Khairatabad','Malakpet','Musheerabad','Nampally','Sanathnagar','Secunderabad','Secunderabad Contonment','Yakatpura']
       },
       {
          "jagtialMandals": ['Beerpur', 'Buggaram', 'Dharmapuri', 'Gollapalli', 'Ibrahimpatnam', 'Jagitial(Urban)', 'Jagitial(Rural)', 'Kathalapur', 'Kodimial', 'Korutla', 'Mallapur', 'Mallial', 'Medipalli', 'Metpally', 'Pegadapalli', 'Raikal', 'Sarangapur', 'Velgatoor']
@@ -102,22 +105,25 @@ export class GlobalConstants {
          "rangaReddyMandals": ['Abdullapurmet', 'Amangal', 'Balapur', 'Chevella', 'Chowdergudem', 'Farooqnagar', 'Gandipet', 'Hayathnagar', 'Ibrahimpatnam', 'Kadthal', 'kandukur', 'Keshampeta', 'Kondurg', 'Kothur', 'Madgul', 'Maheshwaram', 'Manchal', 'Moinabad', 'Nandigama', 'Rajendranagar', 'Saroornagar', 'Serilingampalli', 'Shabad', 'Shamshabad', 'Shankerpalle', 'Talakondapally', 'Yacharam']
       },
       {
-         "sangareddyMandals": ['Ameenapur', 'Andhole', 'Gummadidala', 'Hathanoora', 'Kaddem', 'Khanapur', 'Kubeer', 'Kuntala', 'Laxmanchanda', 'Lokeshwaram', 'Mamada', 'Mudhole', 'Narsapur', 'Nirmal', 'Nirmal(Rural)', 'Pembi', 'Sarangapur', 'Soan', 'Tanoor']
+         "sangareddyMandals": ['Ameenapur', 'Andhole', 'Gummadidala', 'Hathanoora','Jharasangam','Jinnaram','Kalher','Kandi', 'Kangti', 'Kohir', 'Kondapur', 'Manoor', 'Mogdampalle', 'Munipalli', 'Nagalgidda', 'Narayankhed', 'Naykal', 'Patancheruvu', 'Pulkal', 'Ramachandrapuram', 'Raikode', 'Sadasivpet', 'Sangareddy', 'Sirgapoor', 'Watpalle', 'Zahirabad']
       },
       {
-         "narayanpetMandals": ['Damargidda', 'Dhanwada', 'Kosgi', 'Krishna', 'Maddur', 'Maganoor', 'Makthal', 'Marikal', 'Narayanpet', 'Narwa', 'Utkoor']
+         "siddipetMandals": ['Akkannapeta', 'Bejjenki', 'Cherial', 'Chinnakodur','Doulthabad','Dubbak','Gajwel','Husnabad', 'Jagadevapur','Koheda','Komuravelly','Kondapak','Kukunoorpally','Maddur','Markook','Mirdoddi','Mulugu','Nangnoor', 'Narayanaraopet', 'Raipole', 'Siddipet Rural','Siddipet Urban','Thoguta','Wargal']
       },
       {
-         "nizamabadMandals": ['Armoor', 'Balkonda', 'Bheemgal', 'Bodhan', 'Chandur', 'Dharapply', 'Dichapally', 'Indalwai', 'Jakranpally', 'Kammarapally', 'Kotagiri', 'Makloor', 'Mendora', 'Morthad', 'Mosra', 'Mugpal', 'Mupkal', 'Nandipet', 'Navipet', 'Nizamabad North', 'Nizamabad Rural', 'Nizamabad South', 'Renjal', 'Rudrur', 'Sirikonda', 'Vailpoor', 'Varni', 'Yedpally', 'Yergatla',]
+         "suryapetMandals": ['Addaguduru','Ananthagiri','Atmakur','Chilkur','Chinthalapalem','Chivvemla', 'Garidepally', 'Huzurnagar', 'Jajireddigudem', 'Kodad', 'Maddirala', 'Mattampally', 'Mellachervu', 'Mothey', 'Mothkur', 'Munagala', 'Nadigudem', 'Nagaram', 'Neredcherla', 'Noothankal', 'Palakeedu', 'Penpahad', 'Shaligowraram', 'Suryapet', 'Thirumalagiri', 'Thungathurthi']
       },
       {
-         "peddapalliMandals": ['Anthergoan', 'Dharmaram', 'Eligaid', 'Julapalli', 'Kalvasrirampoor', 'Kamanpur', 'Manthani', 'Mutharam', 'Odela', 'Palakurthi', 'Peddapalli', 'Ramagiri', 'Ramagundam', 'Sulthanabad']
+         "vikarabadMandals": ['Bantwaram', 'Basheerabad', 'Bommaraspet', 'Dharur', 'Doma', 'Doulthabad', 'Kodangal', 'Kotepally', 'Kulkacherla', 'Marpalle', 'Mominpet', 'Nawabpet', 'Pargi', 'Peddemul','Pudur','Tandur','Vikarabad','Yelal']
       },
       {
-         "rajannaSircillaMandals": ['Boinpally', 'Chandurthy', 'Ellanthakunta', 'Gambhiraopet', 'Konaraopet', 'Mustabad', 'Rudrangi', 'Sircilla(Urban)', 'Thangallapalli', 'Vemulawada', 'Vemulawada(Rural)', 'Veernapalli', 'Yellareddipet']
+         "wanaparthyMandals": ['Amarchintha', 'Atmakur', 'Chinnambavi', 'Ghanpur', 'Gopalpet', 'Kothakota', 'Madanapur', 'Pangal', 'Pebbair', 'Peddamandaddi', 'Revally', 'Srirangapur', 'Weepangandla']
       },
       {
-         "rangaReddyMandals": ['Abdullapurmet', 'Amangal', 'Balapur', 'Chevella', 'Chowdergudem', 'Farooqnagar', 'Gandipet', 'Hayathnagar', 'Ibrahimpatnam', 'Kadthal', 'kandukur', 'Keshampeta', 'Kondurg', 'Kothur', 'Madgul', 'Maheshwaram', 'Manchal', 'Moinabad', 'Nandigama', 'Rajendranagar', 'Saroornagar', 'Serilingampalli', 'Shabad', 'Shamshabad', 'Shankerpalle', 'Talakondapally', 'Yacharam']
+         "warangalMandals": ['Chennaraopet', 'Duggondi', 'Geesugonda', 'Khanapur', 'Khila Warangal', 'Nallabelly', 'Narsampet', 'Nekkonda', 'Parvathagiri', 'Raiparthy', 'Sangem', 'Warangal', 'Wardhannapet']
+      },
+      {
+         "yadadriBhuvanagiriMandals": ['Alair','Addaguduru', 'Athmakur', 'B.Ramaram', 'Bhongir', 'Bibinagar', 'Choutuppal','Gundala', 'Mothkur','Motakonduru', 'Narayanapur', 'Pochampally', 'Rajapet', 'Ramannapet', 'Thurkapally', 'Valigonda','Yadagirigutta']
       }
    ]
 

@@ -13,10 +13,16 @@
 p {
     font-family: Lato;
   }
-   ::ng-deep .mat-step-header .mat-step-icon-selected {
-    background-color: #d60943; 
- }
+//    ::ng-deep .mat-step-header .mat-step-icon-selected {
+//     background-color: #d60943; 
+   
+//  }
 
+ // mat-icon-stepper selected color change 
+::ng-deep .mat-step-header .mat-step-icon-selected, .mat-step-header .mat-step-icon-state-done, .mat-step-header .mat-step-icon-state-edit {
+  background-color: #d60943!important;
+
+}
 
  .mat-raised-button  {
     background-color: #d60943;

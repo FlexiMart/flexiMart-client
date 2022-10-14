@@ -466,11 +466,6 @@ export class IndexComponent implements OnInit {
     private dataTransfer:DataTransferService) { }
 
   ngOnInit(): void {
-    // this.mediaSub = this.mediaObserver.media$.subscribe(
-    //   (result: MediaChange) => {
-    //     this.deviceXs = result.mqAlias === 'xs' ? true : false;
-    //   }
-    // );
   }
   openSideBarMenuDialogBox(selectedSideMenuItems: string): void {
     const dialogConfig = new MatDialogConfig();
@@ -521,51 +516,71 @@ export class IndexComponent implements OnInit {
       this.selectedMandals = this.mandalList[1].asifabadMandals;
     } else if (selectedDistrict == 'Bhadradri-Kothagudem') {
       this.selectedMandals = this.mandalList[2].bhadradriMandals;
-    } else if (selectedDistrict == 'Bhoopalpally') {
-      this.selectedMandals = this.mandalList[3].bhoopalpallyMandals;
+    } else if (selectedDistrict == 'Bhupalpally') {
+      this.selectedMandals = this.mandalList[3].bhupalpallyMandals;
     } else if (selectedDistrict == 'Gadwal') {
       this.selectedMandals = this.mandalList[4].gadwalMandals;
+    } else if (selectedDistrict == 'Hanamkonda') {
+      this.selectedMandals = this.mandalList[5].hanamkondaMandals;
     } else if (selectedDistrict == 'Hyderabad') {
-      this.selectedMandals = this.mandalList[5].hyderabadMandals;
+      this.selectedMandals = this.mandalList[6].hyderabadMandals;
     } else if (selectedDistrict == 'Jagtial') {
-      this.selectedMandals = this.mandalList[6].jagtialMandals;
+      this.selectedMandals = this.mandalList[7].jagtialMandals;
     } else if (selectedDistrict == 'Janagama') {
-      this.selectedMandals = this.mandalList[7].janagamaMandals;
+      this.selectedMandals = this.mandalList[8].janagamaMandals;
     } else if (selectedDistrict == 'Kamareddy') {
-      this.selectedMandals = this.mandalList[8].kamareddyMandals;
+      this.selectedMandals = this.mandalList[9].kamareddyMandals;
     } else if (selectedDistrict == 'Karimnagar') {
-      this.selectedMandals = this.mandalList[9].karimnagarMandals;
+      this.selectedMandals = this.mandalList[10].karimnagarMandals;
     } else if (selectedDistrict == 'Khammam') {
-      this.selectedMandals = this.mandalList[10].khammamMandals;
+      this.selectedMandals = this.mandalList[11].khammamMandals;
     } else if (selectedDistrict == 'Mahabubabad') {
-      this.selectedMandals = this.mandalList[11].mahabubabadMandals;
+      this.selectedMandals = this.mandalList[12].mahabubabadMandals;
     } else if (selectedDistrict == 'Mahabubnagar') {
-      this.selectedMandals = this.mandalList[12].mahabubnagarMandals;
+      this.selectedMandals = this.mandalList[13].mahabubnagarMandals;
     } else if (selectedDistrict == 'Mancherial') {
-      this.selectedMandals = this.mandalList[13].mancherialMandals;
+      this.selectedMandals = this.mandalList[14].mancherialMandals;
     } else if (selectedDistrict == 'Medchal') {
-      this.selectedMandals = this.mandalList[14].medchalMandals;
+      this.selectedMandals = this.mandalList[15].medchalMandals;
     } else if (selectedDistrict == 'Medak') {
-      this.selectedMandals = this.mandalList[15].medakMandals;
+      this.selectedMandals = this.mandalList[16].medakMandals;
     } else if (selectedDistrict == 'Mulugu') {
-      this.selectedMandals = this.mandalList[16].muluguMandals;
+      this.selectedMandals = this.mandalList[17].muluguMandals;
     } else if (selectedDistrict == 'Nagarkurnool') {
-      this.selectedMandals = this.mandalList[17].nagarkurnoolMandals;
+      this.selectedMandals = this.mandalList[18].nagarkurnoolMandals;
     } else if (selectedDistrict == 'Nalgonda') {
-      this.selectedMandals = this.mandalList[18].nalgondaMandals;
+      this.selectedMandals = this.mandalList[19].nalgondaMandals;
     } else if (selectedDistrict == 'Nirmal') {
-      this.selectedMandals = this.mandalList[19].nirmalMandals;
+      this.selectedMandals = this.mandalList[20].nirmalMandals;
     } else if (selectedDistrict == 'Narayanpet') {
-      this.selectedMandals = this.mandalList[20].narayanpetMandals;
+      this.selectedMandals = this.mandalList[21].narayanpetMandals;
     } else if (selectedDistrict == 'Nizamabad') {
-      this.selectedMandals = this.mandalList[21].nizamabadMandals;
+      this.selectedMandals = this.mandalList[22].nizamabadMandals;
     } else if (selectedDistrict == 'Peddapalli') {
-      this.selectedMandals = this.mandalList[22].peddapalliMandals;
+      this.selectedMandals = this.mandalList[23].peddapalliMandals;
     } else if (selectedDistrict == 'Rajanna Sircilla') {
-      this.selectedMandals = this.mandalList[23].rajannaSircillaMandals;
+      this.selectedMandals = this.mandalList[24].rajannaSircillaMandals;
     } else if (selectedDistrict == 'Ranga Reddy') {
-      this.selectedMandals = this.mandalList[24].rangaReddyMandals;
+      this.selectedMandals = this.mandalList[25].rangaReddyMandals;
+    } else if (selectedDistrict == 'Sangareddy') {
+      this.selectedMandals = this.mandalList[26].sangareddyMandals;
+    } else if (selectedDistrict == 'Siddipet') {
+      this.selectedMandals = this.mandalList[27].siddipetMandals;
+    } else if (selectedDistrict == 'Suryapet') {
+      this.selectedMandals = this.mandalList[28].suryapetMandals;
+    } else if (selectedDistrict == 'Vikarabad') {
+      this.selectedMandals = this.mandalList[29].vikarabadMandals;
+    } else if (selectedDistrict == 'Wanaparthy') {
+      this.selectedMandals = this.mandalList[30].wanaparthyMandals;
+    } else if (selectedDistrict == 'Warangal') {
+      this.selectedMandals = this.mandalList[31].warangalMandals;
+    } else if (selectedDistrict == 'Yadadri-Bhuvanagiri') {
+      this.selectedMandals = this.mandalList[32].yadadriBhuvanagiriMandals;
     }
+  }
+
+  selectingMandalOnToolBar(selectedMandal:any){
+    console.log("Selected Mandal: "+selectedMandal);
   }
   openContactUs() {
     this.router.navigate(['contact']);

@@ -8,9 +8,7 @@
                 close
             </mat-icon>
         </button>
-        <button mat-button style="margin-left: 16px;">
-            <span class="project-title">FlexiMart</span>
-        </button>
+        <span [style.cursor]="'pointer'" class="toolbar-app-title" routerLink="/index">FlexiMart</span>
         <div style="margin-left: 100px;">
             <button style="margin-left: 10px;" mat-button [matMenuTriggerFor]="stateMenu">
             <span class="toolbar-titles">State</span>
@@ -72,5 +70,6 @@
         (click)="selectingDistrictOnToolBar(district)">{{district}}</button>
 </mat-menu>
 <mat-menu #mandalMenu="matMenu">
-    <button mat-menu-item *ngFor="let mandal of selectedMandals" [value]="mandal">{{mandal}}</button>
+    <button mat-menu-item *ngFor="let mandal of selectedMandals" [value]="mandal"
+        (click)="selectingMandalOnToolBar(mandal)">{{mandal}}</button>
 </mat-menu>

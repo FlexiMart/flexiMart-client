@@ -151,73 +151,66 @@ export class AddNewProductComponent implements OnInit {
     } else if (value === 'Bhadradri-Kothagudem') {
       this.mandalList = GlobalConstants.telanganaDistictMandals[2].bhadradriMandals;
     } else if (value === 'Bhupalpally') {
-      this.mandalList = GlobalConstants.telanganaDistictMandals[3].bhoopalpallyMandals;
+      this.mandalList = GlobalConstants.telanganaDistictMandals[3].bhupalpallyMandals;
     } else if (value === 'Gadwal') {
       this.mandalList = GlobalConstants.telanganaDistictMandals[4].gadwalMandals;
+    }  else if (value === 'Hanamkonda') {
+      this.mandalList = GlobalConstants.telanganaDistictMandals[5].hanamkondaMandals;
     } else if (value === 'Hyderabad') {
-      this.mandalList = GlobalConstants.telanganaDistictMandals[5].hyderabadMandals;
-    } else if (value === 'Jagtial') {
-      this.mandalList = GlobalConstants.telanganaDistictMandals[6].jagtialMandals;
+      this.mandalList = GlobalConstants.telanganaDistictMandals[6].hyderabadMandals;
+    } else if (value === 'Jagitial') {
+      this.mandalList = GlobalConstants.telanganaDistictMandals[7].jagtialMandals;
     } else if (value === 'Janagama') {
-      this.mandalList = GlobalConstants.telanganaDistictMandals[7].janagamaMandals;
+      this.mandalList = GlobalConstants.telanganaDistictMandals[8].janagamaMandals;
     } else if (value === 'Kamareddy') {
-      this.mandalList = GlobalConstants.telanganaDistictMandals[8].kamareddyMandals;
+      this.mandalList = GlobalConstants.telanganaDistictMandals[9].kamareddyMandals;
     } else if (value === 'Karimnagar') {
-      this.mandalList = GlobalConstants.telanganaDistictMandals[9].karimnagarMandals;
+      this.mandalList = GlobalConstants.telanganaDistictMandals[10].karimnagarMandals;
     } else if (value === 'Khammam') {
-      this.mandalList = GlobalConstants.telanganaDistictMandals[10].khammamMandals;
+      this.mandalList = GlobalConstants.telanganaDistictMandals[11].khammamMandals;
     } else if (value === 'Mahabubabad') {
-      this.mandalList = GlobalConstants.telanganaDistictMandals[11].mahabubabadMandals;
+      this.mandalList = GlobalConstants.telanganaDistictMandals[12].mahabubabadMandals;
     } else if (value === 'Mahabubnagar') {
-      this.mandalList = GlobalConstants.telanganaDistictMandals[12].mahabubnagarMandals;
+      this.mandalList = GlobalConstants.telanganaDistictMandals[13].mahabubnagarMandals;
     } else if (value === 'Mancherial') {
-      this.mandalList = GlobalConstants.telanganaDistictMandals[13].mancherialMandals;
+      this.mandalList = GlobalConstants.telanganaDistictMandals[14].mancherialMandals;
     } else if (value === 'Medchal') {
-      this.mandalList = GlobalConstants.telanganaDistictMandals[14].medchalMandals;
+      this.mandalList = GlobalConstants.telanganaDistictMandals[15].medchalMandals;
     } else if (value === 'Medak') {
-      this.mandalList = GlobalConstants.telanganaDistictMandals[15].medakMandals;
+      this.mandalList = GlobalConstants.telanganaDistictMandals[16].medakMandals;
     } else if (value === 'Mulugu') {
-      this.mandalList = GlobalConstants.telanganaDistictMandals[16].muluguMandals;
+      this.mandalList = GlobalConstants.telanganaDistictMandals[17].muluguMandals;
     } else if (value === 'Nagarkurnool') {
-      this.mandalList = GlobalConstants.telanganaDistictMandals[17].nagarkurnoolMandals;
+      this.mandalList = GlobalConstants.telanganaDistictMandals[18].nagarkurnoolMandals;
     } else if (value === 'Nalgonda') {
-      this.mandalList = GlobalConstants.telanganaDistictMandals[18].nalgondaMandals;
+      this.mandalList = GlobalConstants.telanganaDistictMandals[19].nalgondaMandals;
     } else if (value === 'Nirmal') {
-      this.mandalList = GlobalConstants.telanganaDistictMandals[19].nirmalMandals;
+      this.mandalList = GlobalConstants.telanganaDistictMandals[20].nirmalMandals;
     } else if (value === 'Narayanpet') {
-      this.mandalList = GlobalConstants.telanganaDistictMandals[20].narayanpetMandals;
+      this.mandalList = GlobalConstants.telanganaDistictMandals[21].narayanpetMandals;
     } else if (value === 'Nizamabad') {
-      this.mandalList = GlobalConstants.telanganaDistictMandals[21].nizamabadMandals;
+      this.mandalList = GlobalConstants.telanganaDistictMandals[22].nizamabadMandals;
     } else if (value === 'Peddapalli') {
-      this.mandalList = GlobalConstants.telanganaDistictMandals[22].peddapalliMandals;
+      this.mandalList = GlobalConstants.telanganaDistictMandals[23].peddapalliMandals;
     } else if (value === 'Rajanna Sircilla') {
-      this.mandalList = GlobalConstants.telanganaDistictMandals[23].rajannaSircillaMandals;
+      this.mandalList = GlobalConstants.telanganaDistictMandals[24].rajannaSircillaMandals;
     } else if (value === 'Ranga Reddy') {
-      this.mandalList = GlobalConstants.telanganaDistictMandals[24].rangaReddyMandals;
+      this.mandalList = GlobalConstants.telanganaDistictMandals[25].rangaReddyMandals;
     } else if (value === 'Sangareddy') {
-      this.mandalList = GlobalConstants.telanganaDistictMandals[25].sangareddyMandals;
-    }
-    //  else if(value ==='Siddipet'){
-    //   this.mandalList=GlobalConstants.telanganaDistictMandals[26].sid
-    //  }else if(value ===''){
-    //   this.mandalList=GlobalConstants.telanganaDistictMandals[]
-    //  } else if(value ===''){
-    //   this.mandalList=GlobalConstants.telanganaDistictMandals[]
-    //  } else if(value ===''){
-    //   this.mandalList=GlobalConstants.telanganaDistictMandals[]
-    //  }else if(value ===''){
-    //   this.mandalList=GlobalConstants.telanganaDistictMandals[]
-    //  }else if(value ===''){
-    //   this.mandalList=GlobalConstants.telanganaDistictMandals[]
-    //  }else if(value ===''){
-    //   this.mandalList=GlobalConstants.telanganaDistictMandals[]
-    //  } else if(value ===''){
-    //   this.mandalList=GlobalConstants.telanganaDistictMandals[]
-    //  } else if(value ===''){
-    //   this.mandalList=GlobalConstants.telanganaDistictMandals[]
-    //  }else if(value ===''){
-    //   this.mandalList=GlobalConstants.telanganaDistictMandals[]
-    //  }
+      this.mandalList = GlobalConstants.telanganaDistictMandals[26].sangareddyMandals;
+    } else if(value ==='Siddipet'){
+      this.mandalList=GlobalConstants.telanganaDistictMandals[27].siddipetMandals;
+    } else if(value ==='Suryapet'){
+      this.mandalList=GlobalConstants.telanganaDistictMandals[28].suryapetMandals;
+     } else if(value ==='Vikarabad'){
+      this.mandalList=GlobalConstants.telanganaDistictMandals[29].vikarabadMandals;
+     } else if(value ==='Wanaparthy'){
+      this.mandalList=GlobalConstants.telanganaDistictMandals[30].wanaparthyMandals;
+     }else if(value ==='Warangal'){
+      this.mandalList=GlobalConstants.telanganaDistictMandals[31].warangalMandals;
+     }else if(value ==='Yadadri-Bhuvanagiri'){
+      this.mandalList=GlobalConstants.telanganaDistictMandals[32].yadadriBhuvanagiriMandals;
+     }
   }
   changeMandal(value: string) {
     console.log(value);
