@@ -12,8 +12,16 @@ export class DataTransferService {
   this.productName=productName;
  }
 
+ set setProductType(productType:any){
+  this.productType=productType;
+ }
+
  get getProductName():any{
   return this.productName;
+ }
+
+ get getProductType():any{
+  return this.productType;
  }
   
   constructor() { }

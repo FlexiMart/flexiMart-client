@@ -8,35 +8,36 @@
                 close
             </mat-icon>
         </button>
-        <span [style.cursor]="'pointer'" class="toolbar-app-title" routerLink="/index">FlexiMart</span>
+        <span [style.cursor]="'pointer'" class="toolbar-app-title" routerLink="/index" (click)="reloadCurrentPage()">FlexiMart</span>
         <div style="margin-left: 100px;">
-            <button style="margin-left: 10px;" mat-button [matMenuTriggerFor]="stateMenu">
+            <button style="margin-left: 10px;" mat-button [matMenuTriggerFor]="stateMenu" *ngIf="enableStateOption">
             <span class="toolbar-titles">State</span>
             </button>
-            <button style="margin-left: 10px;" mat-button [matMenuTriggerFor]="disticMenu">
+            <button style="margin-left: 10px;" mat-button [matMenuTriggerFor]="disticMenu" *ngIf="enableDistrictOption">
                 <span class="toolbar-titles">District</span>
             </button>
-            <button style="margin-left: 10px;" mat-button [matMenuTriggerFor]="mandalMenu">
+            <button style="margin-left: 10px;" mat-button [matMenuTriggerFor]="mandalMenu" *ngIf="enableMandalOption">
                 <span class="toolbar-titles">Mandal</span>
             </button>
-            <button style="margin-left: 50px;" mat-button (click)="openFilterDialogBox()">
+            <button style="margin-left: 50px;" mat-button *ngIf="enableFilterOption" (click)="openFilterDialogBox()">
                 <span class="toolbar-titles">Filter</span>
             </button>
-            <button style="margin-left: 500px;" mat-button (click)="openAddNewProduct()">
+            </div>
+            <span style="flex: 1 1 auto;"></span>
+             <button mat-button (click)="openAddNewProduct()" >
                 <span class="toolbar-titles">New Product</span>
             </button>
-            </div>
     </mat-toolbar-row>
 </mat-toolbar>
 
 <mat-sidenav-container>
     <mat-sidenav #sidenav="matSidenav" class="mat-elevation-z8">
-        <button mat-button class="menu-button" *ngFor="let sideBarMenuTitle of sideBarMenuTitles"
+        <button mat-button class="menu-button" *ngFor="let sideBarMenuTitle of sideBarMenuTitles" 
             (click)="openSideBarMenuDialogBox(sideBarMenuTitle.name)">
             <mat-icon>{{sideBarMenuTitle.icon}}</mat-icon>
-            <span class="toolbar-titles">{{sideBarMenuTitle.name}}</span>
+            <span class="toolbar-titles">{{sideBarMenuTitle.name}}       
+            </span>
         </button>
-
         <mat-divider></mat-divider>
         <button mat-button class="menu-button" (click)="openAboutUs()">
             <mat-icon>account_circle</mat-icon>

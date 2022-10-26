@@ -1,4 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
+import { DataTransferService } from '../services/data-transfer/data-transfer.service';
 
 @Component({
   selector: 'app-home',
@@ -9,7 +10,7 @@ export class HomeComponent implements OnInit {
   @Input() 
   deviceXs!: boolean;
 
-  constructor() { }
+  constructor(private dataTransfer:DataTransferService) { }
 
   topVal = 0;
   onScroll(e: any) {

@@ -23,6 +23,10 @@ export class IndexComponent implements OnInit {
   // deviceXs!: boolean;
   selectedDistricts: string[] | undefined;
   selectedMandals: string[] | undefined;
+  enableStateOption:boolean=false;
+  enableDistrictOption:boolean=false;
+  enableMandalOption:boolean=false;
+  enableFilterOption:boolean=false;
 
   //india states list
   stateList = GlobalConstants.indiaStates;
@@ -38,35 +42,35 @@ export class IndexComponent implements OnInit {
       "agricultureSubTitles": [
         {
           "title": 'Agriculture',
-          "url": 'https://material.angular.io/assets/img/examples/shiba2.jpg',
-          "name": 'Pesticide Machine'
-        },
-        {
-          "url": 'https://material.angular.io/assets/img/examples/shiba2.jpg',
-          "name": 'Current Motor'
-        },
-        {
-          "url": 'https://material.angular.io/assets/img/examples/shiba2.jpg',
-          "name": 'Drip Motor'
-        },
-        {
-          "url": 'https://material.angular.io/assets/img/examples/shiba2.jpg',
-          "name": 'Solar Set'
-        },
-        {
-          "url": 'https://material.angular.io/assets/img/examples/shiba2.jpg',
-          "name": 'Bull Cultivate Items'
-        },
-        {
-          "url": 'https://material.angular.io/assets/img/examples/shiba2.jpg',
-          "name": 'Human Cultivate Items'
-        },
-        {
-          "url": 'https://material.angular.io/assets/img/examples/shiba2.jpg',
+          "url": '../assets/images/agriculture/agriculture-tractor.jpg',
           "name": 'Agriculture Tractor'
         },
         {
-          "url": 'https://material.angular.io/assets/img/examples/shiba2.jpg',
+          "url": '../assets/images/agriculture/bull-cultivate-items.jpg',
+          "name": 'Bull Cultivate Items'
+        },
+        {
+          "url": '../assets/images/agriculture/current-motor.jpg',
+          "name": 'Current Motor'
+        },
+        {
+          "url": '../assets/images/agriculture/drip-motor.jpg',
+          "name": 'Drip Motor'
+        },
+        {
+          "url": '../assets/images/agriculture/human-cultivate-items.jpg',
+          "name": 'Human Cultivate Items'
+        },
+        {
+          "url": '../assets/images/agriculture/pesticide-machine.jpg',
+          "name": 'Pesticide Machine'
+        },
+        {
+          "url": '../assets/images/agriculture/solar-set.jpg',
+          "name": 'Solar Set'
+        },
+        {
+          "url": '../assets/images/agriculture/tractor-cultivate-items.jpg',
           "name": 'Tractor Cultivate Items'
         }
       ]
@@ -85,6 +89,14 @@ export class IndexComponent implements OnInit {
         {
           "url": '../assets/images/animals/buffalo.jpg',
           "name": 'Buffalo'
+        },
+        {
+          "url": '../assets/images/animals/goat.jpg',
+          "name": 'Goat'
+        },
+        {
+          "url": '../assets/images/animals/sheep.jpg',
+          "name": 'Sheep'
         },
         {
           "url": '../assets/images/animals/dog.jpg',
@@ -165,59 +177,59 @@ export class IndexComponent implements OnInit {
       "electronicsubTitles": [
         {
           "title": 'Electronics',
-          "url": 'https://material.angular.io/assets/img/examples/shiba2.jpg',
+          "url":  '../assets/images/electronics/laptop.png',
           "name": 'Laptop'
         },
         {
-          "url": 'https://material.angular.io/assets/img/examples/shiba2.jpg',
+          "url": '../assets/images/electronics/mobiles.jpg',
           "name": 'Mobile'
         },
         {
-          "url": 'https://material.angular.io/assets/img/examples/shiba2.jpg',
+          "url": '../assets/images/electronics/watches.jpg',
           "name": 'Watche'
         },
         {
-          "url": 'https://material.angular.io/assets/img/examples/shiba2.jpg',
+          "url": '../assets/images/electronics/cameras.jpg',
           "name": 'Camera'
         },
         {
-          "url": 'https://material.angular.io/assets/img/examples/shiba2.jpg',
+          "url": '../assets/images/electronics/desktop-computer.jpg',
           "name": 'Desktop Computer'
         },
         {
-          "url": 'https://material.angular.io/assets/img/examples/shiba2.jpg',
+          "url": '../assets/images/electronics/tv.jpg',
           "name": 'TVs'
         },
         {
-          "url": 'https://material.angular.io/assets/img/examples/shiba2.jpg',
+          "url": '../assets/images/electronics/refrigerators.jpg',
           "name": 'Refrigerator'
         },
         {
-          "url": 'https://material.angular.io/assets/img/examples/shiba2.jpg',
+          "url":'../assets/images/electronics/washing-machine.jpg',
           "name": 'Washing Machine'
         },
         {
-          "url": 'https://material.angular.io/assets/img/examples/shiba2.jpg',
+          "url": '../assets/images/electronics/air-conditioner.jpg',
           "name": 'Air Conditioner'
         },
         {
-          "url": 'https://material.angular.io/assets/img/examples/shiba2.jpg',
+          "url": '../assets/images/electronics/air-cooler.jpg',
           "name": 'Air Cooler'
         },
         {
-          "url": 'https://material.angular.io/assets/img/examples/shiba2.jpg',
+          "url": '../assets/images/electronics/generator.jpg',
           "name": 'Generator'
         },
         {
-          "url": 'https://material.angular.io/assets/img/examples/shiba2.jpg',
+          "url": '../assets/images/electronics/inverter.jpg',
           "name": 'Inverters'
         },
         {
-          "url": 'https://material.angular.io/assets/img/examples/shiba2.jpg',
+          "url": '../assets/images/electronics/home-theater.jpg',
           "name": 'Home Theater'
         },
         {
-          "url": 'https://material.angular.io/assets/img/examples/shiba2.jpg',
+          "url": '../assets/images/electronics/printer-machine.jpg',
           "name": 'Xerox Machine'
         }
       ]
@@ -226,43 +238,43 @@ export class IndexComponent implements OnInit {
       "vehiclesSubTitles": [
         {
           "title": 'Vehicles',
-          "url": 'https://material.angular.io/assets/img/examples/shiba2.jpg',
+          "url": '../assets/images/vehicles/bikes.jpg',
           "name": 'Bike'
         },
         {
-          "url": 'https://material.angular.io/assets/img/examples/shiba2.jpg',
+          "url": '../assets/images/vehicles/cars.jpg',
           "name": 'Car'
         },
         {
-          "url": 'https://material.angular.io/assets/img/examples/shiba2.jpg',
+          "url": '../assets/images/vehicles/auto.jpg',
           "name": 'Auto'
         },
         {
-          "url": 'https://material.angular.io/assets/img/examples/shiba2.jpg',
+          "url": '../assets/images/vehicles/tractors.jpg',
           "name": 'Tractor'
         },
         {
-          "url": 'https://material.angular.io/assets/img/examples/shiba2.jpg',
+          "url": '../assets/images/vehicles/bicycle.jpg',
           "name": 'Bicycle'
         },
         {
-          "url": 'https://material.angular.io/assets/img/examples/shiba2.jpg',
+          "url": '../assets/images/vehicles/mini-bus.jpg',
           "name": 'Mini Bus'
         },
         {
-          "url": 'https://material.angular.io/assets/img/examples/shiba2.jpg',
+          "url": '../assets/images/vehicles/big-bus.jpg',
           "name": 'Big Bus'
         },
         {
-          "url": 'https://material.angular.io/assets/img/examples/shiba2.jpg',
+          "url": '../assets/images/vehicles/small-trucks.jpg',
           "name": 'Small Truck'
         },
         {
-          "url": 'https://material.angular.io/assets/img/examples/shiba2.jpg',
+          "url": '../assets/images/vehicles/mini-trucks.jpg',
           "name": 'Mini Truck'
         },
         {
-          "url": 'https://material.angular.io/assets/img/examples/shiba2.jpg',
+          "url": '../assets/images/vehicles/big-trucks.jpg',
           "name": 'Big Truck'
         }
       ]
@@ -271,28 +283,36 @@ export class IndexComponent implements OnInit {
       "saleRentSubTitles": [
         {
           "title": 'Sale&Rent',
-          "url": 'https://material.angular.io/assets/img/examples/shiba2.jpg',
-          "name": 'Land'
+          "url": '../assets/images/sale&rent/agriculture-land.jpg',
+          "name": 'Agriculture Land'
         },
         {
-          "url": 'https://material.angular.io/assets/img/examples/shiba2.jpg',
-          "name": 'Plat'
+          "url": '../assets/images/sale&rent/apartment-flats.jpg',
+          "name": 'Apartment Flats'
         },
         {
-          "url": 'https://material.angular.io/assets/img/examples/shiba2.jpg',
-          "name": 'Villas'
-        },
-        {
-          "url": 'https://material.angular.io/assets/img/examples/shiba2.jpg',
-          "name": 'Commercial'
-        },
-        {
-          "url": 'https://material.angular.io/assets/img/examples/shiba2.jpg',
+          "url": '../assets/images/sale&rent/individual-house.jpg',
           "name": 'Individual House'
         },
         {
-          "url": 'https://material.angular.io/assets/img/examples/shiba2.jpg',
-          "name": 'Construction'
+          "url": '../assets/images/sale&rent/commercial-shop.jpg',
+          "name": 'Commercial shop'
+        },
+        {
+          "url": '../assets/images/sale&rent/open-plots.jpg',
+          "name": 'Open Plots'
+        },
+        {
+          "url": '../assets/images/sale&rent/farm-house.jpg',
+          "name": 'Farm House'
+        },
+        {
+          "url": '../assets/images/sale&rent/villas.png',
+          "name": 'Villas'
+        },
+        {
+          "url": '../assets/images/sale&rent/under-construction.jpg',
+          "name": 'Under Construction'
         }
       ]
     },
@@ -489,8 +509,14 @@ export class IndexComponent implements OnInit {
     } else if (selectedSideMenuItems == 'Solution') {
       dialogConfig.data = this.sideMenuSubTitles[8].solutionSubTitles;
     }
+    if((selectedSideMenuItems != null) && (dialogConfig != null)){
+      this.enableStateOption=true;
+      this.enableFilterOption=true;
+    }
     this.dataTransfer.setProductName=selectedSideMenuItems;
+    this.sidenav.close();
     this.dialog.open(SideMenuDialogComponent, dialogConfig);
+   
   }
 
   openFilterDialogBox(){
@@ -506,7 +532,9 @@ export class IndexComponent implements OnInit {
     } else if (selectedState == 'Telangana') {
       this.selectedDistricts = this.districtList[1].telanganaDistricts;
     }
-
+    if(selectedState != null){
+      this.enableDistrictOption=true;
+    }
   }
   selectingDistrictOnToolBar(selectedDistrict: string): any {
     console.log(selectedDistrict);
@@ -577,6 +605,9 @@ export class IndexComponent implements OnInit {
     } else if (selectedDistrict == 'Yadadri-Bhuvanagiri') {
       this.selectedMandals = this.mandalList[32].yadadriBhuvanagiriMandals;
     }
+    if(selectedDistrict != null){
+      this.enableMandalOption=true;
+    }
   }
 
   selectingMandalOnToolBar(selectedMandal:any){
@@ -591,7 +622,9 @@ export class IndexComponent implements OnInit {
   openAddNewProduct() {
     this.router.navigate(['product']);
   }
+  reloadCurrentPage(){
+    window.location.reload();
+  }
 
- 
 
 }

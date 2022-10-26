@@ -168,7 +168,7 @@ export class GlobalConstants {
     ]
 
    //different Agriculture Product Names for assign to productName Dropdown list.
-  public static agricultureProductName=['Agriculture Tractor','Tractor Cultivate Items','Pesticide Machine','Current Motor','Drip Motor','Solar Set','Bull Cultivate Items','Human Caltivate Items','Labour Work'];
+  public static agricultureProductName=['Agriculture Tractor','Bull Cultivate Items','Current Motor','Drip Motor','Human Caltivate Items','Pesticide Machine','Solar Set','Tractor Cultivate Items'];
 
 //different type's of Animals for assign to animalName Dropdown list.
 public static animalNamesList=['Bull','Cow','Buffalo','Dog','Hen','Sheep','Goat','Rabbit','Donkey'];
